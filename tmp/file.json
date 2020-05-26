@@ -1,0 +1,62 @@
+{
+  "id": "9e3c3603-b6cc-4a56-ac12-c30f7d6077d0",
+  "brand": "Apple",
+  "name": "Macbook Pro",
+  "cpu": {
+    "brand": "AMD",
+    "name": "Ryzen 5 Pro 3200U",
+    "number_cores": 3,
+    "number_threads": 7,
+    "min_ghz": 3.4502877684430198,
+    "max_ghz": 4.063516298799378
+  },
+  "ram": {
+    "value": "50",
+    "unit": "GIGABYTE"
+  },
+  "gpus": [
+    {
+      "brand": "AMD",
+      "name": "RX 5700-XT",
+      "min_ghz": 1.1191469610884073,
+      "max_ghz": 1.1626920551443192,
+      "memory": {
+        "value": "7",
+        "unit": "GIGABYTE"
+      }
+    }
+  ],
+  "storages": [
+    {
+      "driver": "HDD",
+      "memory": {
+        "value": "2",
+        "unit": "TERABYTE"
+      }
+    },
+    {
+      "driver": "SSD",
+      "memory": {
+        "value": "246",
+        "unit": "GIGABYTE"
+      }
+    }
+  ],
+  "screen": {
+    "size_inch": 10.432386,
+    "resolution": {
+      "height": 1105,
+      "width": 1964
+    },
+    "panel": "OLED",
+    "multitouch": false
+  },
+  "keyboard": {
+    "layout": "UNKNOWN",
+    "backlit": true
+  },
+  "weight_kg": 1,
+  "price_usd": 2247.555364301829,
+  "release_date": 0,
+  "updated_at": "2020-05-26T12:31:25.599831034Z"
+}

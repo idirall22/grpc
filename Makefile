@@ -3,3 +3,6 @@ gen:
 
 clean:
 	sudo rm -rf pb/*
+
+test:
+	go test -cover -race ./...
