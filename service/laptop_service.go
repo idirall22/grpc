@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"log"
+	"time"
 
 	"google.golang.org/grpc/codes"
 
@@ -15,13 +16,13 @@ import (
 
 // LaptopServer struct implement laptop service
 type LaptopServer struct {
-	laptopStore LaptopStore
+	LaptopStore LaptopStore
 }
 
 // NewLaptopServer create a new LaptopServer
 func NewLaptopServer(laptopStore LaptopStore) *LaptopServer {
 	return &LaptopServer{
-		laptopStore: NewInMemoryLaptopStore(),
+		LaptopStore: NewInMemoryLaptopStore(),
 	}
 }
 
@@ -43,7 +44,20 @@ func (l *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLaptopReq
 		laptop.Id = id.String()
 	}
 
-	err := l.laptopStore.Save(laptop)
+	time.Sleep(time.Second * 5)
+
+	if ctx.Err() != nil {
+		if ctx.Err() == context.DeadlineExceeded {
+			log.Println("deadline exceeded")
+			return nil, status.Errorf(codes.DeadlineExceeded, "deadline exceeded")
+		} else if ctx.Err() == context.Canceled {
+			log.Println("request canceled")
+			return nil, status.Errorf(codes.Canceled, "request canceled")
+		}
+		return nil, status.Errorf(codes.Internal, "Internal error")
+	}
+
+	err := l.LaptopStore.Save(laptop)
 
 	if err != nil {
 		code := codes.Internal

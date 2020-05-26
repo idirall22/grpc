@@ -1,6 +1,7 @@
 package service
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"sync"
@@ -18,6 +19,7 @@ var (
 // LaptopStore interface
 type LaptopStore interface {
 	Save(laptop *pb.Laptop) error
+	Find(context.Context, string) (*pb.Laptop, error)
 }
 
 // InMemoryLaptopStore struct
@@ -50,4 +52,24 @@ func (s *InMemoryLaptopStore) Save(laptop *pb.Laptop) error {
 
 	s.data[laptop.Id] = other
 	return nil
+}
+
+// Find find a laptop by id
+func (s *InMemoryLaptopStore) Find(ctx context.Context, id string) (*pb.Laptop, error) {
+	s.mutex.RLock()
+	defer s.mutex.RUnlock()
+
+	laptop := s.data[id]
+	if laptop == nil {
+		return nil, nil
+	}
+
+	other := &pb.Laptop{}
+	err := copier.Copy(other, laptop)
+
+	if err != nil {
+		return nil, fmt.Errorf("Could not copy laptop data %v", err)
+	}
+
+	return other, nil
 }
