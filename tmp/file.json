@@ -1,27 +1,27 @@
 {
-  "id": "9e3c3603-b6cc-4a56-ac12-c30f7d6077d0",
-  "brand": "Apple",
-  "name": "Macbook Pro",
+  "id": "2ac759e8-c6d9-4fa0-ba71-a011ea539ccc",
+  "brand": "Lenovo",
+  "name": "Thinkpad X1",
   "cpu": {
-    "brand": "AMD",
-    "name": "Ryzen 5 Pro 3200U",
+    "brand": "Intel",
+    "name": "core i3 9900k",
     "number_cores": 3,
-    "number_threads": 7,
-    "min_ghz": 3.4502877684430198,
-    "max_ghz": 4.063516298799378
+    "number_threads": 10,
+    "min_ghz": 3.2207642315267746,
+    "max_ghz": 3.6834965310436725
   },
   "ram": {
-    "value": "50",
+    "value": "37",
     "unit": "GIGABYTE"
   },
   "gpus": [
     {
-      "brand": "AMD",
-      "name": "RX 5700-XT",
-      "min_ghz": 1.1191469610884073,
-      "max_ghz": 1.1626920551443192,
+      "brand": "Intel",
+      "name": "RX 590",
+      "min_ghz": 1.1610018692970787,
+      "max_ghz": 1.266825115004362,
       "memory": {
-        "value": "7",
+        "value": "4",
         "unit": "GIGABYTE"
       }
     }
@@ -30,33 +30,33 @@
     {
       "driver": "HDD",
       "memory": {
-        "value": "2",
+        "value": "6",
         "unit": "TERABYTE"
       }
     },
     {
       "driver": "SSD",
       "memory": {
-        "value": "246",
+        "value": "642",
         "unit": "GIGABYTE"
       }
     }
   ],
   "screen": {
-    "size_inch": 10.432386,
+    "size_inch": 12.297028,
     "resolution": {
-      "height": 1105,
-      "width": 1964
+      "height": 3041,
+      "width": 5406
     },
     "panel": "OLED",
-    "multitouch": false
+    "multitouch": true
   },
   "keyboard": {
-    "layout": "UNKNOWN",
-    "backlit": true
+    "layout": "QWERTZ",
+    "backlit": false
   },
   "weight_kg": 1,
-  "price_usd": 2247.555364301829,
+  "price_usd": 1940.0464051490062,
   "release_date": 0,
-  "updated_at": "2020-05-26T12:31:25.599831034Z"
+  "updated_at": "2020-05-26T14:58:53.804156079Z"
 }
