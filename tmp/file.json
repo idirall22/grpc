@@ -1,27 +1,27 @@
 {
-  "id": "96190a24-bb88-447c-9885-11d8dbe8ea20",
-  "brand": "Apple",
-  "name": "Macbook Air",
+  "id": "47a0b92f-75d1-403c-9a12-e766c6e8623b",
+  "brand": "Dell",
+  "name": "Xps",
   "cpu": {
-    "brand": "Intel",
-    "name": "core i7 9900k",
-    "number_cores": 3,
-    "number_threads": 3,
-    "min_ghz": 3.312676901176574,
-    "max_ghz": 4.804969634994957
+    "brand": "AMD",
+    "name": "Ryzen 7 Pro 2200U",
+    "number_cores": 5,
+    "number_threads": 6,
+    "min_ghz": 3.3548206109213377,
+    "max_ghz": 4.42813765734696
   },
   "ram": {
-    "value": "6",
+    "value": "31",
     "unit": "GIGABYTE"
   },
   "gpus": [
     {
-      "brand": "Intel",
-      "name": "RX 590",
-      "min_ghz": 1.1180713223204848,
-      "max_ghz": 1.9787651389996967,
+      "brand": "AMD",
+      "name": "RX 5700-XT",
+      "min_ghz": 1.0794797305449313,
+      "max_ghz": 1.170647452567484,
       "memory": {
-        "value": "6",
+        "value": "5",
         "unit": "GIGABYTE"
       }
     }
@@ -37,26 +37,26 @@
     {
       "driver": "SSD",
       "memory": {
-        "value": "715",
+        "value": "553",
         "unit": "GIGABYTE"
       }
     }
   ],
   "screen": {
-    "size_inch": 10.621614,
+    "size_inch": 9.167428,
     "resolution": {
-      "height": 2515,
-      "width": 4471
+      "height": 3691,
+      "width": 6561
     },
     "panel": "IPS",
     "multitouch": true
   },
   "keyboard": {
-    "layout": "QWERTZ",
+    "layout": "QWERTY",
     "backlit": true
   },
   "weight_kg": 1,
-  "price_usd": 2432.1058321450255,
+  "price_usd": 2465.185316813254,
   "release_date": 0,
-  "updated_at": "2020-05-26T15:36:09.740109479Z"
+  "updated_at": "2020-05-27T14:25:49.978518361Z"
 }

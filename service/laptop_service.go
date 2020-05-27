@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"log"
-	"time"
 
 	"google.golang.org/grpc/codes"
 
@@ -44,8 +43,6 @@ func (l *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLaptopReq
 		laptop.Id = id.String()
 	}
 
-	time.Sleep(time.Second * 5)
-
 	if ctx.Err() != nil {
 		if ctx.Err() == context.DeadlineExceeded {
 			log.Println("deadline exceeded")
@@ -72,4 +69,32 @@ func (l *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLaptopReq
 	return &pb.CreateLaptopResponse{
 		Id: laptop.Id,
 	}, nil
+}
+
+// SearchLaptop search for laptop using filter and retur a stream of laptops
+func (l *LaptopServer) SearchLaptop(req *pb.SearchLaptopRequest, stream pb.LaptopService_SearchLaptopServer) error {
+	filter := req.GetFilter()
+	log.Printf("Search request received with this filter %v", filter)
+
+	err := l.LaptopStore.Search(
+		stream.Context(),
+		filter,
+		func(laptop *pb.Laptop) error {
+			res := &pb.SearchLaptopResponse{Laptop: laptop}
+
+			err := stream.Send(res)
+			if err != nil {
+				return err
+			}
+
+			log.Printf("Sebd laptop with id %s", laptop.Id)
+			return nil
+		},
+	)
+
+	if err != nil {
+		return status.Errorf(codes.Internal, "Unexpected error %v", err)
+	}
+
+	return nil
 }
