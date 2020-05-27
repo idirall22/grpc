@@ -64,7 +64,7 @@ func (s *InMemoryLaptopStore) Find(ctx context.Context, id string) (*pb.Laptop, 
 
 	laptop := s.data[id]
 	if laptop == nil {
-		return nil, fmt.Errorf("Laptop not exists")
+		return nil, nil
 	}
 
 	return deepCopy(laptop)

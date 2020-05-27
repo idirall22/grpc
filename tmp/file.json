@@ -1,27 +1,27 @@
 {
-  "id": "47a0b92f-75d1-403c-9a12-e766c6e8623b",
-  "brand": "Dell",
-  "name": "Xps",
+  "id": "e9c4acb2-b318-4d1f-a19f-6f4249487832",
+  "brand": "Lenovo",
+  "name": "Thinkpad P1",
   "cpu": {
-    "brand": "AMD",
-    "name": "Ryzen 7 Pro 2200U",
-    "number_cores": 5,
-    "number_threads": 6,
-    "min_ghz": 3.3548206109213377,
-    "max_ghz": 4.42813765734696
+    "brand": "Intel",
+    "name": "core i9 9900k",
+    "number_cores": 8,
+    "number_threads": 10,
+    "min_ghz": 2.6064693881765146,
+    "max_ghz": 4.057790831973341
   },
   "ram": {
-    "value": "31",
+    "value": "7",
     "unit": "GIGABYTE"
   },
   "gpus": [
     {
       "brand": "AMD",
-      "name": "RX 5700-XT",
-      "min_ghz": 1.0794797305449313,
-      "max_ghz": 1.170647452567484,
+      "name": "RX VEGA-56",
+      "min_ghz": 1.0290960219854033,
+      "max_ghz": 1.1970708201539706,
       "memory": {
-        "value": "5",
+        "value": "8",
         "unit": "GIGABYTE"
       }
     }
@@ -30,33 +30,33 @@
     {
       "driver": "HDD",
       "memory": {
-        "value": "5",
+        "value": "4",
         "unit": "TERABYTE"
       }
     },
     {
       "driver": "SSD",
       "memory": {
-        "value": "553",
+        "value": "338",
         "unit": "GIGABYTE"
       }
     }
   ],
   "screen": {
-    "size_inch": 9.167428,
+    "size_inch": 10.695013,
     "resolution": {
-      "height": 3691,
-      "width": 6561
+      "height": 3156,
+      "width": 5610
     },
-    "panel": "IPS",
+    "panel": "OLED",
     "multitouch": true
   },
   "keyboard": {
-    "layout": "QWERTY",
-    "backlit": true
+    "layout": "QWERTZ",
+    "backlit": false
   },
   "weight_kg": 1,
-  "price_usd": 2465.185316813254,
+  "price_usd": 2636.065549109122,
   "release_date": 0,
-  "updated_at": "2020-05-27T14:25:49.978518361Z"
+  "updated_at": "2020-05-27T16:23:25.227200046Z"
 }

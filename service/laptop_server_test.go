@@ -18,8 +18,9 @@ import (
 func TestCreateLaptop(t *testing.T) {
 	t.Parallel()
 
-	store := service.NewInMemoryLaptopStore()
-	server := service.NewLaptopServer(store)
+	laptopStore := service.NewInMemoryLaptopStore()
+	imageStore := service.NewImageStore("../tmp")
+	server := service.NewLaptopServer(laptopStore, imageStore)
 
 	laptop := sample.NewLaptop()
 
