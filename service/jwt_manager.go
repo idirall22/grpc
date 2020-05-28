@@ -9,8 +9,8 @@ import (
 
 // JWTManager struct
 type JWTManager struct {
-	secret        string
-	tokenDuration time.Duration
+	Secret        string
+	TokenDuration time.Duration
 }
 
 // UserClaims struct
@@ -23,8 +23,8 @@ type UserClaims struct {
 // NewJWTManager create JWTManager
 func NewJWTManager(secret string, tokenDuration time.Duration) *JWTManager {
 	return &JWTManager{
-		secret:        secret,
-		tokenDuration: tokenDuration,
+		Secret:        secret,
+		TokenDuration: tokenDuration,
 	}
 }
 
@@ -34,13 +34,13 @@ func (m *JWTManager) Generate(user *User) (string, error) {
 		Username: user.Username,
 		Role:     user.Role,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Minute * m.tokenDuration).Unix(),
+			ExpiresAt: time.Now().Add(time.Minute * m.TokenDuration).Unix(),
 		},
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, userClaims)
 
-	return token.SignedString([]byte(m.secret))
+	return token.SignedString([]byte(m.Secret))
 }
 
 // Verify verify token
@@ -53,7 +53,7 @@ func (m *JWTManager) Verify(accessToken string) (*UserClaims, error) {
 			if !ok {
 				return nil, fmt.Errorf("Unexpected signing method")
 			}
-			return []byte(m.secret), nil
+			return []byte(m.Secret), nil
 		},
 	)
 
