@@ -50,8 +50,8 @@ func main() {
 	)
 
 	seedUsers(userStore)
-	roles := make(map[string]string)
-	roles["admin"] = "admin"
+	roles := make(map[string][]string)
+	roles["/v1.LaptopService/CreateLaptop"] = []string{"admin"}
 
 	authInterceptor := service.NewAuthInterceptor(jwtManager, roles)
 	grpcServer := grpc.NewServer(grpc.UnaryInterceptor(authInterceptor.Unary()))
